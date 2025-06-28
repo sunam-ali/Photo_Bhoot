@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import FloatingNavbar from "../components/Navbars/FloatingNavbar";
+import FloatingNavbar from "../components/navbars/FloatingNavbar";
 import { useAuth } from "../hooks/useAuth";
 import ProfileProvider from "../providers/ProfileProvider";
 
