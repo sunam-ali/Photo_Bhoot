@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { actions } from "../actions";
 import PostCard from "../components/post/PostCard";
 import { useAuth } from "../hooks/useAuth";
 import { useAxios } from "../hooks/useAxios";
 import { usePost } from "../hooks/usePost";
-import {Link} from 'react-router-dom';
 
 export default function HomePage() {
   const { auth } = useAuth();
@@ -17,7 +17,7 @@ export default function HomePage() {
 
   const isLoggedIn = !!auth?.authToken;
 
-  const pageRef = useRef(1); 
+  const pageRef = useRef(1);
 
   const fetchPosts = useCallback(async () => {
     if (!hasMore) return;
@@ -54,7 +54,7 @@ export default function HomePage() {
           data: merged,
         });
 
-        pageRef.current += 1; 
+        pageRef.current += 1;
       }
     } catch (err) {
       console.error(err);
@@ -141,18 +141,18 @@ export default function HomePage() {
               To see more content and interact, please login or register.
             </p>
             <div className="flex justify-center gap-4">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="bg-[#C13584] text-white px-4 py-2 rounded hover:bg-pink-700"
               >
                 Login
-              </a>
-              <a
-                href="/register"
+              </Link>
+              <Link
+                to="/register"
                 className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
               >
                 Register
-              </a>
+              </Link>
             </div>
           </div>
         </div>
