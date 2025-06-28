@@ -73,3 +73,13 @@ Create a `.env` file at the root:
 
 ```env
 VITE_SERVER_BASE_URL=http://localhost:3000
+
+
+git clone https://github.com/sunam-ali/Photo_Bhoot.git
+cd Photo_Bhoot
+
+npm install
+
+npm run dev
+
+
